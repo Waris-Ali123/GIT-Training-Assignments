@@ -1,6 +1,6 @@
 h1{
     width: 100%;
-    /* height: 100v; */
+    height: 100vh;
     color: darkblue;
     justify-content: center;
     align-content: center;
@@ -9,6 +9,13 @@ h1{
     font-size: 55px;
 }
 
-h2 {
-    color : red;
+h2{
+    width: 100%;
+    height: 100vh;
+    color: darkmagenta;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 55px;
 }
