@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME - ROLL THE DICE</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <section id="game-section">
+        <div id="upper-container">
+            <div class="player-box">
+                <div class="player-no">Player-1</div>
+                <input id="name-player1" class="player-name" type="text" value="User-1" onclick="this.select()">
+                <div class="saved-score">Saved Score : <span id="score-player1">00</span></div>
+            </div>
+            <div id="roll-curScore-box">
+                <div id="dice" >
+                    <div class="dice-row">
+                        <div class="dot" id="d1"></div>
+                        <div class="dot" id="d2"></div>
+                        <div class="dot" id="d3"></div>
+                    </div>
+                    <div class="dice-row">
+                        <div class="dot" id="d4"></div>
+                        <div class="dot" id="d5"></div>
+                        <div class="dot" id="d6"></div>
+                    </div>
+                    <div class="dice-row">
+                        <div class="dot" id="d7"></div>
+                        <div class="dot" id="d8"></div>
+                        <div class="dot" id="d9"></div>
+                    </div>
+                </div>
+                
+                <div id="cur-score-box">
+                    CURRENT SCORE : <span id="cur-score">00</span>
+                </div>
+            </div>
+            <div class="player-box">
+                <div class="player-no">Player-2</div>
+                <input id="name-player2" class="player-name" type="text" value="User-2" onclick="this.select()">
+                <!-- <div class="player-name" id="name-player2">User-2</div> -->
+                <div class="saved-score">Saved Score : <span id="score-player2">00</span></div>
+            </div>
+        </div>
+        <div id="bottom-container">
+            <button class="btn-game" id="roll-btn" onclick="rollDice()">ROLL DICE</button>
+            <button class="btn-game" id="save-btn" onclick="saveScore()">SAVE SCORE</button>
+            <button class="btn-game" id="reset-btn" onclick="reset()">RESET</button>
+        </div>
+
+        
+        <div id="target-box">
+            Target value:<input id="target" value="100" onchange="setNewTarget()"></input>
+        </div>
+        
+        
+    </section>
+    <div id="winner-msg"></div>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
