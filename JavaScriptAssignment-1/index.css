@@ -111,6 +111,7 @@ body {
     text-align: center;
     overflow: scroll;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .player-name:focus-visible {
@@ -118,6 +119,11 @@ body {
     background: none;
     outline: none;
     border-bottom: 1px dashed rgb(0, 0, 66);
+}
+
+.player-name:disabled{
+    color:black;
+    cursor: not-allowed;
 }
 
 .saved-score {
@@ -238,7 +244,7 @@ body {
     background-color: rgba(0, 0, 0, 0.534);
     color: aliceblue;
     padding: 2px 9px;
-
+    text-transform: uppercase;
     border-radius: 5px;
     font-weight: bold;
     position: absolute;
@@ -260,6 +266,10 @@ body {
 #target:focus {
     outline: none;
     border: none;
+}
+
+#target:disabled{
+    cursor: not-allowed;
 }
 
 

@@ -9,12 +9,23 @@ let target = parseInt(document.getElementById('target').value);
 console.log(target);
 let hasAnyWinner = false; //hasAnyWinner used to terminate the game if the winner is declared
 let dots = document.getElementsByClassName("dot");
+let gameStarted = false; // in order to refuse the names to be edited if game started
+
+
 
 function rollDice() {
-  if(hasAnyWinner==false) {
+  if(!gameStarted){
+    gameStarted = true;
+    refuseToChangeNames();
+  }
+
+  if(!hasAnyWinner) {
     for (let i = 0; i < dots.length; i++) {
       dots[i].style.visibility = "hidden";
     }
+
+    console.log('working'
+    );
     
 
     rotation += 720;
@@ -88,6 +99,17 @@ function reset() {
 
   // Remove any winner message if present
   document.getElementById('winner-msg').innerText = "";
+  hasAnyWinner = false;
+
+  //Setting the target to 100
+  target = 100;
+  document.getElementById('target').value = target;
+
+  //Enabling to edit the names of players
+  gameStarted = false;
+  document.getElementById("name-player2").disabled = false;
+  document.getElementById("name-player1").disabled = false;
+  document.getElementById('target').disabled = false;
 }
 
 
@@ -115,5 +137,12 @@ function setNewTarget(){
       console.log(target);
 
   }
+
+
+function refuseToChangeNames(){
+  document.getElementById("name-player2").setAttribute('disabled',true);
+  document.getElementById("name-player1").setAttribute('disabled',true);
+  document.getElementById('target').setAttribute('disabled',true);
+}
 
   
