@@ -18,8 +18,10 @@ body {
     border: 3px dashed white;
     padding: 25px 19px;
     /* height: 50vh; */
-    background: linear-gradient(320deg, rgb(0, 21, 103) 0%, hsla(204, 95%, 77%, 1) 100%);
     background: url(https://img.freepik.com/free-vector/blue-copy-space-digital-background_23-2148821698.jpg?t=st=1741088254~exp=1741091854~hmac=861bf99b5e99d210ab7bbb706b0037337300035f4bd2b0e39ff276c2bd558cec&w=1380);
+    background: linear-gradient(159deg, #001f3f 50%, #004080 50%, #0060c0 0%);
+    background: linear-gradient(135deg, #001f3f, #003060, #004080, #003060, #001f3f);
+    /* background: linear-gradient(320deg, rgb(0, 21, 103) 55%, hsla(204, 95%, 77%, 1) 100%); */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -173,7 +175,7 @@ body {
     border-radius: 17px;
     transition: transform 2s ease-in-out;
     background: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-52393.jpg?t=st=1741111607~exp=1741115207~hmac=01455a833f8bc89b1d7b4995e4aa8fc82789641d7a0d417ba6f8d0d2a158807f&w=1800');
-    /* background: url(https://img.freepik.com/free-photo/futuristic-metaverse-empty-room-product-display-presentation-abstract-technology-scifi-with-neon-light-3d-background_56104-2314.jpg?t=st=1741088104~exp=1741091704~hmac=d9f141d8eb97d5b53022b88d75cf5e9d6e98cd9229d84de6226c2fc695b8e41b&w=1380) ; */
+    background: linear-gradient(155deg, #000a13, #0056ac);
     background-size: cover;
     margin-bottom: 20px;
 
@@ -252,8 +254,8 @@ body {
 }
 
 #target {
-    background-color: none;
-    background-color: inherit;
+    background: none;
+    /* background-color: inherit; */
     border: none;
     width: 40px;
     color: aliceblue;
@@ -261,6 +263,7 @@ body {
     padding: 5px;
     font-weight: 600;
     cursor: pointer;
+    font-size: medium;
 }
 
 #target:focus {
