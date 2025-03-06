@@ -1,0 +1,185 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 100%;
+    max-width: 1035px;
+    margin: 30px;
+    padding: 30px 20px;
+    /* background-color: #D3C5E5; */
+    background: aliceblue;
+    border-radius: 15px;
+    border: 3px dashed blueviolet;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome-msg{
+    text-align: center;
+    font-size: 2.5rem;
+    /* font-size: larger; */
+
+}
+
+#first-block{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 45px;
+    row-gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 30px auto;
+}
+
+
+#categories-division{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+}
+
+#categories-division h3{
+    white-space: nowrap;
+}
+
+#categories-box{
+    /* appearance: none; */
+    background: none;
+    /* background-image: url('https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png'); */
+    /* background-position: right 10px ; */
+    outline: none;
+    border: none;
+    border: 1px dashed #351c6f;
+    border-radius: 8px;
+    min-width: 200px;
+    max-width: 100%;
+    overflow: scroll;
+    background-color:  #f6efff;
+    color: #290284;
+    font-size: 14px;
+    padding: 6px;
+    text-align: left;
+    cursor: pointer;
+    
+}
+
+#categories-box:focus{
+    text-align: left
+
+}
+
+#difficultySection{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 10px;
+}
+
+#difficultySection h3{
+    white-space: nowrap;
+}
+
+.difficulty-level-label{
+    margin: 2px;
+    font-weight: 550;
+    padding: 2px;
+    display: flex;
+    column-gap: 3px;
+    cursor: pointer;
+}
+
+.difficulty-level-label input{
+    cursor: pointer;
+}
+
+#start-btn{
+    display: flex;
+    font-size: 2.5rem;
+    flex-wrap: nowrap;
+    column-gap: 5px;
+    align-items: center;
+    font-weight: 550;
+    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #290284;
+    color: #ffffff;
+    border: 1px solid #160048;
+    cursor: pointer;
+
+    /* width: 200px; */
+
+}
+
+#start-btn:hover{
+    box-shadow: 0px 4px 2px #0c00287c;
+}
+
+
+
+@media (max-width:990px) {
+    #first-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    #categories-box {
+        min-width: 150px; /* Decrease width */
+        font-size: 0.8rem; /* Reduce font size */
+        padding: 4px; /* Adjust padding */
+    }
+}
+@media (max-width: 390px) {
+    
+    .container{
+        transform: scale(0.7);
+        margin: 20px auto;
+    }
+    
+    #first-block{
+        justify-content: left;
+        align-items: flex-start;
+    }
+
+    #categories-box {
+        min-width: 100px; 
+        font-size: 0.8rem; 
+        padding: 2px; 
+        /* flex-direction: column; */
+    }
+
+
+    #categories-division{
+        align-items: flex-start;
+        justify-content: left;
+        flex-direction: column;
+        row-gap: 10px;
+        
+    }
+    
+    #difficultySection{
+        justify-content: left;
+        align-items: flex-start;
+        row-gap: 10px;
+        flex-direction: column;
+    }
+
+    #start-btn{
+        font-size: 1.2rem;
+        margin: 0 auto;
+        padding: 5px 10px;
+        letter-spacing: 5px;    
+    }
+}
