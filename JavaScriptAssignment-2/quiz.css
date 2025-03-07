@@ -77,6 +77,10 @@ body{
     white-space: nowrap;
 } */
 
+#difficulty{
+    text-transform: capitalize;
+}
+
 
 #thirdBlock{
     padding: 15px 20px;

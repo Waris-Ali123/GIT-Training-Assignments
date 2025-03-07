@@ -28,6 +28,7 @@ async function getQuestions() {
 function putQuestions() {
     let index = 0;
     let stopTime;
+    let correctAns;
 
     function displayQuestion() {
         if (index >= quesArray.length) {
@@ -43,7 +44,7 @@ function putQuestions() {
             let optionContainer = document.getElementById("optionContainer");
 
             let currentQuestion = quesArray[index];
-            let correctAns = currentQuestion.correct_answer;
+            correctAns = currentQuestion.correct_answer;
 
             mainQuestion.innerText = currentQuestion.question;
 
@@ -116,11 +117,13 @@ function putQuestions() {
 
         stopTime = setTimeout(()=>{
 
-            clearInterval(clock);
-
-            index++;
-
-            displayQuestion();
+            showCorrectAns(correctAns);
+            
+            setTimeout(() => {
+                clearInterval(clock);
+                index++;
+                displayQuestion();
+            }, 2000);
 
         },15000);
 
@@ -135,12 +138,19 @@ function putQuestions() {
 
         clock = setInterval(() => {
 
-            startTime--;
+            
+            if(startTime>0)
+                {
+                    startTime--;
+
+                }
             countdown.innerText = startTime;
 
             if(startTime<=5){
                 timer.style.color = 'red';
             }
+
+
             
         }, 1000);
 
