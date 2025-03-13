@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            max-width: 1035px;
+            margin: 30px auto;
+            padding: 30px 20px;
+            background: aliceblue;
+            border-radius: 15px;
+            border: 3px dashed blueviolet;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            row-gap: 25px;
+        }
+
+        #score-card {
+            display: flex;
+            ;
+            column-gap: 25px;
+
+        }
+
+        .texting {
+            font-weight: 600;
+            font-size: 2.5rem;
+            white-space: nowrap;
+        }
+
+        #playAgainBtn {
+            /* width: 200px; */
+            font-size: 1.2rem;
+            border-radius: 10px;
+            /* background-color: rgb(0, 0, 74); */
+            background: none;
+            color: rgb(84, 0, 84);
+            padding: 9px 20px;
+            font-weight: 600;
+            transition: transform 2s;
+            cursor: pointer;
+        }
+
+        #playAgainBtn:hover {
+            box-shadow: 2px 2px 4px grey;
+            /* transform: scale(1.05); */
+            background-color: brown;
+            color: aliceblue;
+            /* transform: translateY(-5px); */
+        }
+
+
+        @media (max-width:500px) {
+
+            .texting {
+                font-size: 1.5rem;
+            }
+
+            #playAgainBtn {
+                padding: 5px 15px;
+                font-weight: 700;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="score-card">
+            <div class="texting">Final Scores : </div>
+            <div class="texting" id="score-box">
+                <span id="scored"></span>
+                out of
+                <span id="total"></span>
+            </div>
+        </div>
+
+        <button id="playAgainBtn">Play Again..</button>
+
+        <div id="thankyou-msg"></div>
+
+    </div>
+
+
+
+    <script>
+        let scored = localStorage.getItem('scoreObtained');
+        let totalScore = localStorage.getItem('TotalScore');
+
+        console.log(scored, ' out of ', totalScore);
+
+        document.getElementById('scored').innerText = scored;
+        document.getElementById('total').innerText = totalScore;
+
+        document.getElementById('playAgainBtn').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        })
+
+
+    </script>
+
+</body>
+
+</html>

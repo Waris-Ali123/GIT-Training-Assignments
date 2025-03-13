@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <section class="container">
+        <h1 id="welcome-msg">Welcome To Quiz Contest</h1>
+
+        <div id="first-block">
+
+            <div id="categories-division">
+                <h3>Categories :</h3>
+                <select id="categories-box" name="categories">
+                </select>
+            </div>
+            
+            <div id="difficultySection">
+                <h3>Difficulty :</h3>                    
+                   <label htmlFor="easy" class="difficulty-level-label">
+                       <input name="difficulty-level" type="radio"  value="easy" checked>Easy
+                   </label>
+                   <label htmlFor="medium" class="difficulty-level-label">
+                       <input name="difficulty-level" type="radio"  value="medium">Medium
+                    </label> 
+                    <label htmlFor="hard" class="difficulty-level-label">
+                        <input name="difficulty-level" type="radio" value="hard">Hard
+                    </label>
+            </div>
+        </div>
+
+        <button id="start-btn" onclick="storingInLocalStorage()">
+            <div>START</div>
+            <i class="fa-solid fa-angles-right"></i>
+        </button>
+
+    </section>
+
+</body>
+</html>
