@@ -1,0 +1,600 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue : #2a2185;
+    --blue-dark: #00246b;
+    --blue-light: #cadcfc;
+    --white: #ffffff;
+    --grey : #4d4d4d;
+    --primary : #00246b;
+    --success : #006b04;
+    --warning : #FFEB3B;
+    --danger : #F44336;
+    --black-dark : #000000;
+    --border-radius-1: 35px;
+}
+
+body {
+    background-color: var(--blue-light);
+    
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+.container {
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+
+/* =============================================Navigation aside starts=================================== */
+
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    border-left: 10px solid var(--blue-dark);
+    transition: 0.5s;
+    overflow: hidden;
+    background-color: var(--blue-dark);
+}
+
+.navigation.active {
+    width: 80px;
+  }
+  
+
+.listOfMenus {
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.listOfMenus .listItem {
+    border-top-left-radius: var(--border-radius-1);
+    border-bottom-left-radius: var(--border-radius-1);
+    margin-left: 2px;
+    list-style: none;
+    cursor: pointer;
+    white-space: nowrap;
+ 
+}
+
+.listOfMenus .listItem button {
+    display: flex;
+    font-size: 1.1rem;
+    column-gap: 20px;
+    padding: 20px 20px;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+    border: #00246b 2px;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.listOfMenus .listItem:hover,
+.listOfMenus .listItem.active{
+    background-color: var(--white);
+}
+
+.listOfMenus .listItem:hover button,
+.listOfMenus .listItem.active button {
+    color: var(--blue-dark);
+}
+
+.listOfMenus .listItem:first-child {
+    margin-bottom: 35px;
+    pointer-events: none;
+}
+
+.listOfMenus .listItem:last-child {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.listOfMenus .listItem button span.icon {
+    font-size: 30px;
+}
+
+
+
+/* ===================================main section starts==================== */
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    padding: 0 25px;
+}
+
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+    transition: 0.5s;
+}
+
+/* =====================================top search container starts================================ */
+.topContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+
+}
+
+.topContainer span.menuIcon{
+    font-size: 2.5rem;;
+    cursor: pointer;
+    color: var(--blue-dark);
+}
+
+.topContainer .searchContainer{
+    position: relative;
+    min-width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.searchContainer .searchIcon{
+    font-size: 1.7rem;
+    position: absolute;
+    left:18px;
+}
+
+.searchContainer .searchBar{
+    padding: 10px 40px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    border-color:gray;
+    width: 100%;
+    font-weight: 500;
+}
+
+.profilePhoto .circularPhoto{
+    padding: 10px;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.profilePhoto .circularPhoto:hover{
+    box-shadow: 1px 1px 3px 3px rgba(255, 255, 255, 1);
+}
+
+
+
+
+
+
+/* ======================================cards starts ======================= */
+.cardContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    justify-content: space-between;
+}
+.cards{
+    background-color: var(--white);
+    padding: 20px 25px;
+    border-radius: var(--border-radius-1);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+    transition: .2 ease;
+    cursor: pointer;
+    
+}
+
+.cards .top{
+    font-size: 2.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards .top .counts{
+    color: var(--blue-dark);
+    font-weight: 600;
+}
+
+.cards span.icon{
+    font-size: 50px;
+    color: var(--grey) ;
+}
+
+.cards .label{
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--black-dark);
+}
+
+.cards:hover{
+    background-color: var(--blue-dark);
+    box-shadow: none;
+}
+
+.cards:hover .top .counts{
+    color: var(--white);
+}
+
+.cards:hover > div.label{
+    color: var(--white);
+}
+
+.cards:hover span.icon{
+    color: var(--white);
+}
+
+/* =================================tablesContainer starts============================= */
+.tablesContainer{
+    margin:30px 0px;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow-x: scroll;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: var(--blue-dark) var(--white);
+    scrollbar-width: 30px; 
+    position: relative;
+}
+
+.tablesContainer h2{
+    margin-top: 30px;
+}
+
+
+span.addBtn:hover{
+    color: var(--white);
+    background-color: var(--blue-dark);
+    transform: scale(1.1);
+}
+
+.entityTable{
+    margin-top: 35px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    transition: 1s ease-out;
+    position: relative;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    white-space: nowrap;
+    
+}
+
+.entityTable .addBtn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: -65px;
+    right: 5px;
+    background-color: var(--blue-light);
+    color: var(--blue-dark);
+}
+
+.entityTable thead th{
+    font-weight: 600;
+    padding: 20px;
+    text-align: left;
+    pointer-events: none;
+}
+
+.entityTable  tr td,
+.entityTable thead th{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    padding: 10px;
+    text-align: left;
+}
+
+.entityTable td:last-child,
+.entityTable th:last-child
+{
+
+    text-align: right;
+}
+
+.entityTable tr:last-child {
+    border-bottom: none;
+  }
+
+.entityTable tr:hover{
+    background-color: var(--blue-dark);
+    color: var(--white);
+}
+
+
+.Del-icon{
+    font-size: 1.5rem;
+    color: var(--danger);
+    text-align: left;
+    cursor: pointer;
+    margin-right: 5px;
+
+
+}
+
+.update-btn{
+    font-size: 1.5rem;
+    color: var(--black-dark);
+    text-align: right;
+    cursor: pointer;
+}
+
+.entityTable tr:hover .update-btn{
+    color: var(--warning);
+}
+
+
+.entityTable .statusBox .success{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--black-dark);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.entityTable .statusBox .danger{
+    padding: 2px 4px;
+    background: #f00;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.entityTable .feedbackInsideTable {
+    max-width: 30ch; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.entityTable .feedbackInsideTable:hover {
+    white-space: normal;
+    max-width: 300px;
+    text-align: left
+}
+
+
+
+
+/* ===================================Profile================================================ */
+.userFormContainer{
+    margin: 0 auto; 
+    background-color: var(--blue-dark);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.heading{
+    text-align: center;
+    color: var(--blue-dark);
+    margin: 15px 0;;
+}
+
+.userForm{
+    width: 100%;
+    display: grid;
+    gap: 20px 30px;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--white);
+    
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.userForm label{
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 600;
+    padding:10px;
+    width: max-content;
+    white-space: nowrap; 
+}
+
+.userForm input,
+.userForm select{
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    border-bottom: 1px dashed var(--white);
+    width: 100%;
+    background: whitesmoke;
+    border-radius: 15px;
+    width: 100%;
+    padding: 5px 15px;
+    color:var(--black-dark);
+    font-weight: 500;
+}
+
+.userForm input:read-only{
+    cursor: not-allowed;
+}
+
+.read-only-select {
+    pointer-events: none; 
+    opacity: 0.6;        
+    background-color: #f9f9f9;
+  }
+  
+
+
+.userForm  input.editable {
+    background-color: #fff;
+    border: 1px solid var(--blue-light);
+    cursor: text;
+}
+
+
+.editBtn{
+    cursor: pointer;
+    min-width: 40%;
+    max-width: 80%;
+    padding: 10px 30px;
+    margin: 0 auto;
+    background: none;
+    background-color: var(--white);
+    color: var(--blue-dark);
+    border-radius: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: transform 1s;
+}
+
+.editBtn.saveChanges{
+    background-color: var(--success);
+    color: #cadcfc;
+}
+
+.editBtn:hover{
+    background-color: var(--blue-dark);
+    color: var(--white);
+    border: 2px solid var(--white);
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 1);
+}
+
+
+/* ============================
+Responsive design implementation starts ------- media query   -----------1
+============================ */
+/* --------------1024px---------- */
+
+@media (max-width: 1024px) {
+
+    /* ------home page ----------- */
+
+    .cards .top {
+        font-size: 1.8rem;
+    }
+
+    .cards span.icon {
+        font-size: 40px;
+    }
+
+    .cards .label {
+        font-size: 15px;
+    }
+
+    .cardContainer {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+
+}
+
+
+
+
+
+/* -------------------768 px -------------
+ */
+
+
+
+@media (max-width: 768px) {
+    .navigation{
+        width: 80px;
+        ;
+    }
+
+    .main{
+        left: 80px;
+        width: 100%;
+    }
+
+    .main {
+        padding: 0 15px;
+    }
+
+    .entityTable {
+        margin-top: 15px;
+    }
+
+    .entityTable  tr td, .entityTable thead th {
+        font-size: .8rem;
+    }
+
+    .tablesContainer h2 {
+        font-size: 1.1rem;
+    }
+
+    .entityTable .addBtn {
+        font-size: 1.8rem;
+        top: -45px;
+    }
+
+    .entityTable .statusBox .success {
+        font-size: 10px;
+    }
+
+    .entityTable .statusBox .danger {
+        padding: 2px 4px;
+        font-size: 10px;
+        font-weight: 550;
+        color: var(--danger);
+        background-color: var(--warning);
+    }
+
+}
+
+
+/* -----------------430px ------------ */
+
+@media (max-width:430px){
+    .cards {
+        padding: 10px 15px;
+        border-radius: 15px;
+        box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /* -------form --------- */
+    .userForm {
+        display: grid;
+        gap: 10px 10px;
+        grid-template-columns: 1fr;
+    }
+
+    .editBtn {
+        padding: 8px 30px;
+        font-size: 1rem;
+        white-space: nowrap;
+        
+    }
+
+    .userForm label {
+        font-size: 1rem;
+    }
+}
